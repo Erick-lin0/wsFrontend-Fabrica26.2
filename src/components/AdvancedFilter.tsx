@@ -1,7 +1,6 @@
 "use client";
 
 import { SlidersHorizontal } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +9,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ROLE_KEYS, obterRotuloDaRole } from "@/utils/roles";
+import { ROLE_KEYS, obterCorDaRole, obterRotuloDaRole } from "@/utils/roles";
 import { TODAS_AS_FUNCOES, type OpcaoDeRole } from "@/utils/filtrarHerois";
 
 interface AdvancedFilterProps {
@@ -27,35 +26,48 @@ export function AdvancedFilter({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
+        <button
+          type="button"
           aria-label="Abrir filtros"
-          className="glass relative h-14 w-14 rounded-full border-white/15 text-surface hover:text-flare"
+          style={{ transform: "skewX(-15deg)" }}
+          className="relative flex h-12 w-12 shrink-0 items-center justify-center border border-edge bg-panel text-paper transition-colors hover:border-flare hover:text-flare"
         >
-          <SlidersHorizontal className="h-5 w-5" />
+          <SlidersHorizontal className="h-5 w-5" style={{ transform: "skewX(15deg)" }} />
           {possuiFiltroAtivo && (
-            <span className="absolute right-3 top-3 h-2 w-2 rounded-full bg-flare" />
+            <span className="absolute right-2 top-2 h-1.5 w-1.5 bg-flare" />
           )}
-        </Button>
+        </button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
         align="end"
-        className="w-52 border-white/10 bg-ink/95 text-surface backdrop-blur-xl"
+        sideOffset={10}
+        className="glass-panel w-56 rounded-none p-1.5 text-paper"
       >
-        <DropdownMenuLabel className="font-display uppercase tracking-widest text-steel">
+        <DropdownMenuLabel className="px-2 pb-2 font-display text-[0.7rem] font-bold uppercase italic tracking-[0.2em] text-fade">
           Função
         </DropdownMenuLabel>
+
         <DropdownMenuRadioGroup
           value={roleSelecionada}
           onValueChange={(valor) => aoSelecionarRole(valor as OpcaoDeRole)}
         >
-          <DropdownMenuRadioItem value={TODAS_AS_FUNCOES}>
-            Todas as funções
+          <DropdownMenuRadioItem
+            value={TODAS_AS_FUNCOES}
+            className="cursor-pointer rounded-none py-2 font-display text-sm font-bold uppercase italic transition-colors focus:bg-white/5 focus:text-flare"
+          >
+            Todas
           </DropdownMenuRadioItem>
+
           {ROLE_KEYS.map((role) => (
-            <DropdownMenuRadioItem key={role} value={role}>
+            <DropdownMenuRadioItem
+              key={role}
+              value={role}
+              // A cor da função entra como variável CSS para o hover usar
+              // a cor certa sem precisar de uma classe por função.
+              style={{ ["--cor-role" as string]: obterCorDaRole(role) }}
+              className="cursor-pointer rounded-none py-2 font-display text-sm font-bold uppercase italic transition-colors focus:bg-white/5 focus:text-[var(--cor-role)]"
+            >
               {obterRotuloDaRole(role)}
             </DropdownMenuRadioItem>
           ))}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normalizarTexto } from "@/utils/text";
+import { formatarAniversario, normalizarTexto } from "@/utils/text";
 
 describe("normalizarTexto", () => {
   it("remove acentos", () => {
@@ -16,5 +16,23 @@ describe("normalizarTexto", () => {
 
   it("mantém string vazia", () => {
     expect(normalizarTexto("")).toBe("");
+  });
+});
+
+describe("formatarAniversario", () => {
+  it("traduz o mês e inverte a ordem", () => {
+    expect(formatarAniversario("November 3")).toBe("3 de novembro");
+  });
+
+  it("traduz meses com acento", () => {
+    expect(formatarAniversario("March 15")).toBe("15 de março");
+  });
+
+  it("devolve texto padrão quando não há data", () => {
+    expect(formatarAniversario(null)).toBe("Desconhecido");
+  });
+
+  it("devolve o original quando o formato é inesperado", () => {
+    expect(formatarAniversario("Unknown")).toBe("Unknown");
   });
 });
