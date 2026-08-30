@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${fonteDeDestaque.variable} ${fonteDeTexto.variable} bg-ink font-body antialiased`}
       >
         <Header />
-        <main className="pt-16">{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

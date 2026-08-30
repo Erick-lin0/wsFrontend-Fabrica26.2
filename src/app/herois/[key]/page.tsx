@@ -33,20 +33,20 @@ export default async function PaginaDeDetalhes({ params }: PaginaDeDetalhesProps
     <article className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-sm text-steel transition-colors hover:text-flare"
+        className="inline-flex items-center gap-2 text-sm text-surface transition-colors hover:text-flare"
       >
         <ArrowLeft className="h-4 w-4" />
-        Voltar para a lista
+        Voltar
       </Link>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[380px_1fr]">
+            <div className="mt-8 grid gap-10 lg:grid-cols-[300px_1fr]">
         <div className="glass relative aspect-[3/4] overflow-hidden rounded-3xl">
           <Image
             src={heroi.portrait}
             alt={`Retrato de ${heroi.name}`}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 380px"
+            sizes="(max-width: 1024px) 60vw, 300px"
             className="object-cover"
           />
         </div>
