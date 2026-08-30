@@ -56,12 +56,12 @@ export function HeroesExplorer({ herois }: HeroesExplorerProps) {
   }
 
   return (
-    <section id="herois" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+        <section id="herois" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <h2 className="text-center font-display text-3xl font-extrabold uppercase tracking-tight text-surface sm:text-5xl">
         Conheça os Heróis
       </h2>
 
-      <div className="mx-auto mt-10 flex max-w-3xl items-center gap-3">
+                <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:grid-cols-5">
         <SearchBar valor={termoDeBusca} aoAlterar={aplicarBusca} />
         <AdvancedFilter
           roleSelecionada={roleSelecionada}

@@ -104,6 +104,52 @@
       inset 0 1px 0 rgba(251, 255, 254, 0.18),
       0 12px 32px -18px rgba(23, 20, 45, 0.9);
   }
+
+    /* Botão em estilo fantasia: cantos chanfrados, moldura dourada dupla
+     e núcleo que "carrega" energia azul no hover. */
+  .btn-fantasy {
+    --chanfro: 9px;
+    position: relative;
+    isolation: isolate;
+    clip-path: polygon(
+      var(--chanfro) 0,
+      100% 0,
+      100% calc(100% - var(--chanfro)),
+      calc(100% - var(--chanfro)) 100%,
+      0 100%,
+      0 var(--chanfro)
+    );
+    background: linear-gradient(180deg, #e0bd6b, #8d6a26);
+    transition: filter 0.3s ease;
+  }
+
+  .btn-fantasy::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    clip-path: inherit;
+    background: radial-gradient(circle at 50% 130%, #232043 0%, #17142d 70%);
+    transition: background 0.35s ease;
+  }
+
+  .btn-fantasy:hover:not(:disabled) {
+    filter: drop-shadow(0 0 10px rgba(224, 189, 107, 0.55));
+  }
+
+  .btn-fantasy:hover:not(:disabled)::before {
+    background: radial-gradient(
+      circle at 50% 130%,
+      #4b75fc 0%,
+      #274dea 45%,
+      #17142d 100%
+    );
+  }
+
+  .btn-fantasy:disabled {
+    filter: grayscale(0.7);
+    opacity: 0.35;
+  }
 }
 
 /* Respeita quem prefere menos movimento. */
