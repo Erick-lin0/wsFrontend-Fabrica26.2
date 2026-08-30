@@ -14,15 +14,15 @@
   --font-body: var(--font-barlow), system-ui, sans-serif;
 
   --animate-marquee: marquee 32s linear infinite;
-}
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    /* -50% porque a lista de plataformas é renderizada duplicada. */
-    transform: translateX(-50%);
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* -50% porque a lista de plataformas é renderizada duplicada. */
+      transform: translateX(-50%);
+    }
   }
 }
 
