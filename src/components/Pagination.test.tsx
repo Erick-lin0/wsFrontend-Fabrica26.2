@@ -7,20 +7,21 @@ describe("<Pagination />", () => {
     const { container } = render(
       <Pagination paginaAtual={1} totalDePaginas={1} aoMudarPagina={vi.fn()} />,
     );
-
     expect(container).toBeEmptyDOMElement();
   });
 
   it("desabilita o botão anterior na primeira página", () => {
-    render(<Pagination paginaAtual={1} totalDePaginas={3} aoMudarPagina={vi.fn()} />);
-
+    render(
+      <Pagination paginaAtual={1} totalDePaginas={3} aoMudarPagina={vi.fn()} />,
+    );
     expect(screen.getByLabelText("Página anterior")).toBeDisabled();
     expect(screen.getByLabelText("Próxima página")).toBeEnabled();
   });
 
   it("desabilita o botão seguinte na última página", () => {
-    render(<Pagination paginaAtual={3} totalDePaginas={3} aoMudarPagina={vi.fn()} />);
-
+    render(
+      <Pagination paginaAtual={3} totalDePaginas={3} aoMudarPagina={vi.fn()} />,
+    );
     expect(screen.getByLabelText("Próxima página")).toBeDisabled();
   });
 
@@ -29,9 +30,7 @@ describe("<Pagination />", () => {
     render(
       <Pagination paginaAtual={2} totalDePaginas={5} aoMudarPagina={aoMudarPagina} />,
     );
-
     fireEvent.click(screen.getByLabelText("Próxima página"));
-
     expect(aoMudarPagina).toHaveBeenCalledWith(3);
   });
 });

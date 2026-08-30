@@ -1,16 +1,27 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { SiGithub } from "react-icons/si";
 
 const URL_SITE_OFICIAL = "https://overwatch.blizzard.com/pt-br/";
+const URL_REPOSITORIO =
+  "https://github.com/Erick-lin0/wsFrontend-Fabrica26.2";
+
+const ESTILO_GITHUB =
+  "flex h-11 w-11 items-center justify-center border-2 " +
+  "border-flare text-flare transition-colors hover:bg-flare hover:text-void";
+
+const ESTILO_JOGAR =
+  "btn-angular bg-flare px-8 py-3 font-display text-sm font-extrabold " +
+  "uppercase italic tracking-tight text-void hover:bg-paper";
+
+const SKEW = { transform: "skewX(-15deg)" };
+const CONTRA_SKEW = { transform: "skewX(15deg)" };
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-edge bg-void/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
-                {/* O briefing pede recarregar a página ao clicar na logo, então usamos
-            <a> em vez de <Link>, que faz navegação sem recarregar. */}
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/" aria-label="Voltar ao início" className="flex items-center gap-3">
+        <a href="/" aria-label="Voltar ao início" className="flex items-center">
           <Image
             src="/logo-overwatch.png"
             alt="Overwatch"
@@ -21,14 +32,21 @@ export function Header() {
           />
         </a>
 
-        <Button
-          asChild
-          className="h-11 rounded-lg bg-flare px-7 font-display text-sm font-bold uppercase tracking-wide text-ink shadow-[0_6px_18px_-5px_rgba(255,134,64,0.9)] transition hover:brightness-110"
-        >
-          <a href={URL_SITE_OFICIAL} target="_blank" rel="noopener noreferrer">
-            Jogue já
+        <div className="flex items-center gap-4">
+          <a href={URL_REPOSITORIO} target="_blank" rel="noopener noreferrer"
+            aria-label="Repositório do projeto no GitHub"
+            style={SKEW}
+            className={ESTILO_GITHUB}
+          >
+            <SiGithub className="h-5 w-5" style={CONTRA_SKEW} />
           </a>
-        </Button>
+
+          <a href={URL_SITE_OFICIAL} target="_blank" rel="noopener noreferrer"
+            className={ESTILO_JOGAR}
+          >
+            <span>Jogar</span>
+          </a>
+        </div>
       </div>
     </header>
   );

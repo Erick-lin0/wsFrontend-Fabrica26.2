@@ -8,6 +8,9 @@ interface PaginationProps {
   aoMudarPagina: (pagina: number) => void;
 }
 
+const ESTILO_DO_BOTAO =
+  "btn-angular flex h-11 w-14 items-center justify-center bg-panel text-paper hover:bg-flare hover:text-void disabled:cursor-not-allowed disabled:hover:bg-panel disabled:hover:text-paper";
+
 export function Pagination({
   paginaAtual,
   totalDePaginas,
@@ -25,9 +28,11 @@ export function Pagination({
         aria-label="Página anterior"
         disabled={paginaAtual === 1}
         onClick={() => aoMudarPagina(paginaAtual - 1)}
-        className="btn-fantasy flex h-12 w-16 items-center justify-center text-surface"
+        className={ESTILO_DO_BOTAO}
       >
-        <ChevronLeft className="h-5 w-5" />
+        <span>
+          <ChevronLeft className="h-5 w-5" />
+        </span>
       </button>
 
       {/* A numeração some da tela a pedido do design, mas continua anunciada
@@ -41,9 +46,11 @@ export function Pagination({
         aria-label="Próxima página"
         disabled={paginaAtual === totalDePaginas}
         onClick={() => aoMudarPagina(paginaAtual + 1)}
-        className="btn-fantasy flex h-12 w-16 items-center justify-center text-surface"
+        className={ESTILO_DO_BOTAO}
       >
-        <ChevronRight className="h-5 w-5" />
+        <span>
+          <ChevronRight className="h-5 w-5" />
+        </span>
       </button>
     </nav>
   );

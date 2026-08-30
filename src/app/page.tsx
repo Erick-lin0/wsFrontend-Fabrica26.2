@@ -11,7 +11,7 @@ export default async function PaginaInicial() {
   try {
     herois = await buscarHerois();
   } catch (erro) {
-    console.error("Falha ao carregar os heróis:", erro);
+    console.error("Falha ao carregar os herois:", erro);
     falhouAoCarregar = true;
   }
 
@@ -22,10 +22,10 @@ export default async function PaginaInicial() {
 
       {falhouAoCarregar ? (
         <section className="mx-auto max-w-2xl px-4 py-32 text-center">
-          <h2 className="font-display text-2xl font-bold text-surface">
+          <h2 className="font-display text-2xl font-bold uppercase italic text-paper">
             Não foi possível carregar os heróis
           </h2>
-          <p className="mt-3 text-steel">
+          <p className="mt-3 text-fade">
             A OverFast API não respondeu. Recarregue a página em alguns instantes.
           </p>
         </section>

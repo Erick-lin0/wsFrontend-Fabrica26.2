@@ -15,6 +15,16 @@ export interface HeroHitPoints {
   total: number;
 }
 
+export interface HeroAbility {
+  name: string;
+  description: string;
+  icon: string;
+}
+
+export interface HeroStory {
+  summary: string;
+}
+
 /** Formato retornado por GET /heroes/{key} (detalhe). */
 export interface HeroDetail {
   name: string;
@@ -22,7 +32,9 @@ export interface HeroDetail {
   portrait: string;
   role: HeroRole;
   location: string;
-  birthday: string;
+  birthday: string | null;
   age: number | null;
   hitpoints: HeroHitPoints | null;
+  abilities: HeroAbility[];
+  story: HeroStory | null;
 }

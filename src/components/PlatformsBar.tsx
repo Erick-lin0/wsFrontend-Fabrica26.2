@@ -1,5 +1,5 @@
-import { Gamepad2, Monitor } from "lucide-react";
-import { SiBox, SiPlaystation4, SiPlaystation5 } from "react-icons/si";
+import { Gamepad2 } from "lucide-react";
+import { FaPlaystation, FaWindows, FaXbox } from "react-icons/fa6";
 import type { ComponentType } from "react";
 
 interface Platform {
@@ -10,11 +10,13 @@ interface Platform {
 }
 
 const PLATAFORMAS: Platform[] = [
-  { nome: "PC", Icone: Monitor, corDaMarca: "#4B75FC" },
-  { nome: "PlayStation 4", Icone: SiPlaystation4, corDaMarca: "#0070D1" },
-  { nome: "PlayStation 5", Icone: SiPlaystation5, corDaMarca: "#0070D1" },
-  { nome: "Xbox One", Icone: SiBox, corDaMarca: "#107C10" },
-  { nome: "Xbox Series", Icone: SiBox, corDaMarca: "#107C10" },
+  { nome: "PC", Icone: FaWindows, corDaMarca: "#00A4EF" },
+  { nome: "PlayStation 4", Icone: FaPlaystation, corDaMarca: "#0070D1" },
+  { nome: "PlayStation 5", Icone: FaPlaystation, corDaMarca: "#0070D1" },
+  { nome: "Xbox One", Icone: FaXbox, corDaMarca: "#107C10" },
+  { nome: "Xbox Series", Icone: FaXbox, corDaMarca: "#107C10" },
+  // O Nintendo Switch não tem ícone próprio nos pacotes disponíveis,
+  // então usamos um controle genérico.
   { nome: "Nintendo Switch", Icone: Gamepad2, corDaMarca: "#E60012" },
 ];
 
@@ -25,7 +27,7 @@ export function PlatformsBar() {
   return (
     <section
       aria-label="Plataformas disponíveis"
-      className="overflow-hidden border-b border-white/5 bg-ink py-4"
+      className="overflow-hidden border-y border-edge/40 bg-panel/30 py-4 backdrop-blur-md"
     >
       <ul className="flex w-max animate-marquee items-center gap-14 pr-14 hover:[animation-play-state:paused]">
         {SEQUENCIA_EM_LOOP.map(({ nome, Icone, corDaMarca }, indice) => (
@@ -33,7 +35,7 @@ export function PlatformsBar() {
             key={`${nome}-${indice}`}
             title={nome}
             style={{ ["--cor-da-marca" as string]: corDaMarca }}
-            className="text-steel transition-colors duration-300 hover:text-[var(--cor-da-marca)]"
+            className="text-edge transition-colors duration-300 hover:text-[var(--cor-da-marca)]"
           >
             <Icone className="h-7 w-7" />
             <span className="sr-only">{nome}</span>

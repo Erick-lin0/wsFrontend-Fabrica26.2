@@ -6,7 +6,6 @@ import { AdvancedFilter } from "@/components/AdvancedFilter";
 import { HeroCard } from "@/components/HeroCard";
 import { Pagination } from "@/components/Pagination";
 import { SearchBar } from "@/components/SearchBar";
-import { Button } from "@/components/ui/button";
 import {
   TODAS_AS_FUNCOES,
   calcularTotalDePaginas,
@@ -56,12 +55,12 @@ export function HeroesExplorer({ herois }: HeroesExplorerProps) {
   }
 
   return (
-        <section id="herois" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <h2 className="text-center font-display text-3xl font-extrabold uppercase tracking-tight text-surface sm:text-5xl">
-        Conheça os Heróis
+    <section id="herois" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <h2 className="text-center font-display text-3xl font-extrabold uppercase italic tracking-tight text-paper sm:text-5xl">
+        Encontre seu Herói
       </h2>
 
-                <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-8 xl:grid-cols-5">
+      <div className="mx-auto mt-10 flex max-w-3xl items-center justify-end gap-3">
         <SearchBar valor={termoDeBusca} aoAlterar={aplicarBusca} />
         <AdvancedFilter
           roleSelecionada={roleSelecionada}
@@ -71,16 +70,17 @@ export function HeroesExplorer({ herois }: HeroesExplorerProps) {
 
       {heroisDaPagina.length === 0 ? (
         <div className="mt-16 text-center">
-          <p className="font-display text-xl text-surface">
+          <p className="font-display text-xl font-bold uppercase italic text-paper">
             Nenhum herói corresponde a essa busca.
           </p>
-          <p className="mt-2 text-steel">Tente outro nome ou função.</p>
-          <Button
+          <p className="mt-2 text-fade">Tente outro nome ou função.</p>
+          <button
+            type="button"
             onClick={limparFiltros}
-            className="mt-6 rounded-full bg-flare px-6 font-display font-bold text-ink hover:brightness-110"
+            className="btn-angular mt-8 bg-flare px-7 py-3 font-display text-sm font-extrabold uppercase italic tracking-tight text-void hover:bg-paper"
           >
-            Limpar filtros
-          </Button>
+            <span>Limpar filtros</span>
+          </button>
         </div>
       ) : (
         <>
