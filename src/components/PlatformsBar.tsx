@@ -11,10 +11,8 @@ interface Platform {
 
 const PLATAFORMAS: Platform[] = [
   { nome: "PC", Icone: FaWindows, corDaMarca: "#00A4EF" },
-  { nome: "PlayStation 4", Icone: FaPlaystation, corDaMarca: "#0070D1" },
-  { nome: "PlayStation 5", Icone: FaPlaystation, corDaMarca: "#0070D1" },
-  { nome: "Xbox One", Icone: FaXbox, corDaMarca: "#107C10" },
-  { nome: "Xbox Series", Icone: FaXbox, corDaMarca: "#107C10" },
+  { nome: "PlayStation", Icone: FaPlaystation, corDaMarca: "#0070D1" },
+  { nome: "Xbox", Icone: FaXbox, corDaMarca: "#107C10" },
   // O Nintendo Switch não tem ícone próprio nos pacotes disponíveis,
   // então usamos um controle genérico.
   { nome: "Nintendo Switch", Icone: Gamepad2, corDaMarca: "#E60012" },

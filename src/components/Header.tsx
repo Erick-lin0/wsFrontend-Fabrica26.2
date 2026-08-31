@@ -1,13 +1,8 @@
 import Image from "next/image";
-import { SiGithub } from "react-icons/si";
+
 
 const URL_SITE_OFICIAL = "https://overwatch.blizzard.com/pt-br/";
-const URL_REPOSITORIO =
-  "https://github.com/Erick-lin0/wsFrontend-Fabrica26.2";
 
-const ESTILO_GITHUB =
-  "flex h-11 w-11 items-center justify-center border-2 " +
-  "border-flare text-flare transition-colors hover:bg-flare hover:text-void";
 
 const ESTILO_JOGAR =
   "btn-angular bg-flare px-8 py-3 font-display text-sm font-extrabold " +
@@ -33,13 +28,7 @@ export function Header() {
         </a>
 
         <div className="flex items-center gap-4">
-          <a href={URL_REPOSITORIO} target="_blank" rel="noopener noreferrer"
-            aria-label="Repositório do projeto no GitHub"
-            style={SKEW}
-            className={ESTILO_GITHUB}
-          >
-            <SiGithub className="h-5 w-5" style={CONTRA_SKEW} />
-          </a>
+          
 
           <a href={URL_SITE_OFICIAL} target="_blank" rel="noopener noreferrer"
             className={ESTILO_JOGAR}
