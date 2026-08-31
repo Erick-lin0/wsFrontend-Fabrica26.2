@@ -1,14 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ---------- Kinetic Vanguard: design tokens ---------- */
+
 @theme {
   --color-flare: #f99e1a; /* primária: destaque e ações */
   --color-edge: #405275; /* secundária: bordas e divisores */
   --color-panel: #212e4c; /* terciária: containers e cards */
-  --color-paper: #f0edf2; /* neutra: textos e títulos */
-  --color-void: #0d1120; /* fundo da página */
-  --color-fade: #a8b4ce; /* neutra atenuada: textos de apoio */
+  --color-paper: #f0edf2; 
+  --color-void: #0d1120; 
+  --color-fade: #a8b4ce; 
 
   --font-display: var(--font-anybody), system-ui, sans-serif;
   --font-body: var(--font-anybody), system-ui, sans-serif;
@@ -20,13 +20,13 @@
       transform: translateX(0);
     }
     to {
-      /* -50% porque a lista de plataformas é renderizada duplicada. */
+ 
       transform: translateX(-50%);
     }
   }
 }
 
-/* ---------- Variáveis exigidas pelo Shadcn/ui ---------- */
+
 :root {
   --radius: 0.25rem;
   --background: #0d1120;
@@ -78,7 +78,7 @@
     @apply bg-void font-body text-paper;
   }
 
-  /* Foco sempre visível: requisito de acessibilidade. */
+
   :focus-visible {
     outline: 2px solid var(--color-flare);
     outline-offset: 2px;
@@ -86,8 +86,6 @@
 }
 
 @layer components {
-  /* Botão angular: o corte diagonal de -15deg é a assinatura do design.
-     O conteúdo recebe o contra-skew para o texto continuar reto. */
   .btn-angular {
     transform: skewX(-15deg);
     box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
@@ -115,7 +113,7 @@
     opacity: 0.3;
   }
 
-  /* Glassmorphism leve para cards e containers. */
+
   .glass-panel {
     background: rgba(33, 46, 76, 0.6);
     backdrop-filter: blur(12px);
@@ -123,7 +121,7 @@
   }
 }
 
-/* Respeita quem prefere menos movimento. */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

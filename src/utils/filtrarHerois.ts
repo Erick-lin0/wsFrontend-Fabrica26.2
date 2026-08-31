@@ -11,10 +11,7 @@ export interface CriteriosDeBusca {
   role: OpcaoDeRole;
 }
 
-/**
- * Função pura: mesma entrada, mesma saída.
- * Fica fora do componente para poder ser testada isoladamente.
- */
+
 export function filtrarHerois(
   herois: Hero[],
   { termo, role }: CriteriosDeBusca,

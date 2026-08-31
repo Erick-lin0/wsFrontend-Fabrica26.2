@@ -63,8 +63,6 @@ export function AdvancedFilter({
             <DropdownMenuRadioItem
               key={role}
               value={role}
-              // A cor da função entra como variável CSS para o hover usar
-              // a cor certa sem precisar de uma classe por função.
               style={{ ["--cor-role" as string]: obterCorDaRole(role) }}
               className="cursor-pointer rounded-none py-2 font-display text-sm font-bold uppercase italic transition-colors focus:bg-white/5 focus:text-[var(--cor-role)]"
             >

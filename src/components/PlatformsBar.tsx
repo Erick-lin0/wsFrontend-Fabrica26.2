@@ -5,7 +5,7 @@ import type { ComponentType } from "react";
 interface Platform {
   nome: string;
   Icone: ComponentType<{ className?: string }>;
-  /** Cor da marca aplicada no hover. */
+
   corDaMarca: string;
 }
 
@@ -13,12 +13,11 @@ const PLATAFORMAS: Platform[] = [
   { nome: "PC", Icone: FaWindows, corDaMarca: "#00A4EF" },
   { nome: "PlayStation", Icone: FaPlaystation, corDaMarca: "#0070D1" },
   { nome: "Xbox", Icone: FaXbox, corDaMarca: "#107C10" },
-  // O Nintendo Switch não tem ícone próprio nos pacotes disponíveis,
-  // então usamos um controle genérico.
+
   { nome: "Nintendo Switch", Icone: Gamepad2, corDaMarca: "#E60012" },
 ];
 
-// A lista é duplicada para que o loop de rolagem não apresente espaço vazio.
+
 const SEQUENCIA_EM_LOOP = [...PLATAFORMAS, ...PLATAFORMAS];
 
 export function PlatformsBar() {

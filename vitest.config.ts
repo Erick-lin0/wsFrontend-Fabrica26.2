@@ -11,7 +11,7 @@ export default defineConfig({
     include: ["src/**/*.test.{ts,tsx}"],
   },
   resolve: {
-    // Reproduz o alias "@/*" definido no tsconfig.json.
+
     alias: { "@": path.resolve(__dirname, "./src") },
   },
 });

@@ -3,8 +3,7 @@ import Image from "next/image";
 export function HeroBanner() {
   return (
     <section className="relative flex h-[68vh] min-h-[420px] items-end overflow-hidden bg-void">
-      {/* unoptimized: o otimizador do Next converte GIFs para imagem estática
-          e a animação se perde. */}
+
       <Image
         src="/hero-overwatch.gif"
         alt=""

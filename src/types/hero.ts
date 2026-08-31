@@ -1,6 +1,5 @@
 export type HeroRole = "tank" | "damage" | "support";
 
-/** Formato retornado por GET /heroes (listagem). */
 export interface Hero {
   key: string;
   name: string;
@@ -25,7 +24,6 @@ export interface HeroStory {
   summary: string;
 }
 
-/** Formato retornado por GET /heroes/{key} (detalhe). */
 export interface HeroDetail {
   name: string;
   description: string;

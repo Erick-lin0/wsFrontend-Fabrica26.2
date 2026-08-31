@@ -6,7 +6,7 @@ import type { Hero } from "@/types/hero";
 
 interface HeroCardProps {
   heroi: Hero;
-  /** As 5 primeiras imagens carregam com prioridade por ficarem acima da dobra. */
+
   prioridade?: boolean;
 }
 
@@ -17,8 +17,7 @@ export function HeroCard({ heroi, prioridade = false }: HeroCardProps) {
   return (
     <Link
       href={`/herois/${heroi.key}`}
-      // A cor da função entra como variável CSS para o contorno e o texto
-      // assumirem a cor certa no hover sem uma classe por função.
+
       style={{ ["--cor-role" as string]: corDaRole }}
       className="group relative block aspect-[3/4] overflow-hidden border border-edge bg-panel transition duration-300 hover:-translate-y-1 hover:border-[var(--cor-role)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flare"
     >

@@ -35,8 +35,7 @@ export function Pagination({
         </span>
       </button>
 
-      {/* A numeração some da tela a pedido do design, mas continua anunciada
-          por leitores de tela para não perder a informação de contexto. */}
+
       <p aria-live="polite" className="sr-only">
         Página {paginaAtual} de {totalDePaginas}
       </p>
