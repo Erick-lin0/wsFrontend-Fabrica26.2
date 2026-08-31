@@ -6,6 +6,10 @@ describe("normalizarTexto", () => {
     expect(normalizarTexto("Torbjörn")).toBe("torbjorn");
   });
 
+    it("aceita meses abreviados", () => {
+    expect(formatarAniversario("Oct 1")).toBe("1 de outubro");
+  });
+
   it("converte para caixa baixa", () => {
     expect(normalizarTexto("REINHARDT")).toBe("reinhardt");
   });
