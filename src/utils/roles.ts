@@ -2,7 +2,7 @@ import type { HeroRole } from "@/types/hero";
 
 interface RolePresentation {
   label: string;
-  /** Cor da função, usada em bordas e textos no hover. */
+
   cor: string;
 }
 

@@ -8,8 +8,6 @@ const ESTILO_JOGAR =
   "btn-angular bg-flare px-8 py-3 font-display text-sm font-extrabold " +
   "uppercase italic tracking-tight text-void hover:bg-paper";
 
-const SKEW = { transform: "skewX(-15deg)" };
-const CONTRA_SKEW = { transform: "skewX(15deg)" };
 
 export function Header() {
   return (

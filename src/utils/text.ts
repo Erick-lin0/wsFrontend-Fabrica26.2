@@ -1,6 +1,3 @@
-/**
- * Remove acentos e caixa para que "torbjorn" encontre "Torbjörn".
- */
 export function normalizarTexto(valor: string): string {
   return valor
     .normalize("NFD")
@@ -9,8 +6,6 @@ export function normalizarTexto(valor: string): string {
     .trim();
 }
 
-// A API devolve o mês abreviado ("Oct"), mas aceitamos também o nome
-// por extenso para o caso de o formato mudar.
 const MESES_EM_PORTUGUES: Record<string, string> = {
   jan: "janeiro",
   january: "janeiro",
@@ -39,7 +34,6 @@ const MESES_EM_PORTUGUES: Record<string, string> = {
 
 /**
  * Converte "Oct 1" em "1 de outubro".
- * Devolve o valor original se o formato não for reconhecido.
  */
 export function formatarAniversario(aniversario: string | null): string {
   if (!aniversario) return "Desconhecido";

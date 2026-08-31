@@ -1,10 +1,6 @@
 import { API_CONFIG } from "@/config/api";
 import type { Hero, HeroDetail } from "@/types/hero";
 
-/**
- * Único ponto do projeto que fala HTTP.
- * `fetch` não rejeita a Promise em 4xx/5xx, por isso checamos `response.ok`.
- */
 async function requestJson<T>(path: string): Promise<T> {
   const response = await fetch(`${API_CONFIG.baseUrl}${path}`, {
     headers: { Accept: "application/json" },

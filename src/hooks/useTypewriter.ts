@@ -11,7 +11,6 @@ interface TypewriterOptions {
 
 /**
  * Digita cada frase, pausa, apaga e passa para a próxima, em loop infinito.
- * Usado apenas como efeito visual do placeholder: não interfere no valor do input.
  */
 export function useTypewriter({
   frases,
