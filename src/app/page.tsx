@@ -1,3 +1,4 @@
+import { ApiBanner } from "@/components/ApiBanner";
 import { HeroBanner } from "@/components/HeroBanner";
 import { HeroesExplorer } from "@/components/HeroesExplorer";
 import { PlatformsBar } from "@/components/PlatformsBar";
@@ -30,7 +31,10 @@ export default async function PaginaInicial() {
           </p>
         </section>
       ) : (
-        <HeroesExplorer herois={herois} />
+        <>
+          <HeroesExplorer herois={herois} />
+          <ApiBanner />
+        </>
       )}
     </>
   );
